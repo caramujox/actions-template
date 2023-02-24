@@ -1,5 +1,6 @@
 name: 43scj Devops Fiap
 
+run-name: ${{ github.actor }} is ruinning 43scj Devops Fiap 🚀
 on:
   [push] 
 
@@ -74,6 +75,15 @@ jobs:
       url: 'https://fiapdevops.herokuapp.com/fiap'
 
     needs: code-analisys
+    steps:
+    - uses: actions/checkout@v2
+    - uses: akhileshns/heroku-deploy@v3.12.12
+             
+      with:
+        heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+        heroku_email: ${{secrets.HEROKU_EMAIL}}
+        heroku_app_name: ${{secrets.HEROKU_APP}}
+        dontuseforce: 0
     steps:
     - uses: actions/checkout@v2
     - uses: akhileshns/heroku-deploy@v3.12.12
