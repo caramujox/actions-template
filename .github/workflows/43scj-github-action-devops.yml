@@ -1,9 +1,7 @@
-name: 43scj Devops Fiap
-
+name: QuatroTresScj Devops Fiap
 run-name: ${{ github.actor }} is ruinning 43scj Devops Fiap 🚀
 on:
   [push] 
-
 jobs:
   build:
     runs-on: ubuntu-latest
